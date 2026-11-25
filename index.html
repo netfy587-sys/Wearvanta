@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wearvanta | Focus, Study Habits and Calmer Daily Routines</title>
+<meta name="description" content="Wearvanta is an independent reading space about focus and daily routines: how to plan your day, set up a workspace, take better notes and build study habits that feel sustainable.">
+
+<!-- Google AdSense / Google Ads script: paste your site code here (inside head) -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#1D2033;
+  --peri:#5B52D6;
+  --peri-d:#4338B8;
+  --peri-l:#E9E7FB;
+  --mint:#38BF9A;
+  --white:#FFFFFF;
+  --paper:#F7F7FC;
+  --text:#262A40;
+  --muted:#616782;
+  --line:#E1E2EF;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--white);color:var(--text);line-height:1.75;font-size:17px;width:100%;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--peri-d)}
+a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:700;line-height:1.15;color:var(--ink);letter-spacing:-.01em}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 28px}
+.narrow{max-width:780px}
+
+/* header */
+header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+.bar{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand span{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.94rem}
+nav a:hover{color:var(--peri)}
+
+/* hero */
+.hero{background:var(--peri-l);padding:72px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,5vw,4.1rem);margin-bottom:22px}
+.hero p{color:var(--muted);font-size:1.12rem;max-width:540px;margin-bottom:32px}
+.btn{display:inline-block;background:var(--peri);color:#fff;text-decoration:none;padding:15px 30px;border-radius:10px;font-weight:700;transition:background .2s}
+.btn:hover{background:var(--peri-d)}
+.btn.out{background:transparent;color:var(--ink);border:2px solid var(--ink);margin-left:12px}
+.btn.out:hover{background:var(--ink);color:#fff}
+.hero-media{position:relative}
+.hero-media img{width:100%;height:480px;object-fit:cover;border-radius:var(--radius);background:#c9c5f0}
+.float{position:absolute;background:var(--white);border-radius:12px;padding:16px 20px;box-shadow:0 10px 30px rgba(29,32,51,.16);max-width:230px}
+.float strong{display:block;font-family:'Fraunces',serif;font-size:1.15rem;color:var(--ink);line-height:1.2}
+.float span{font-size:.88rem;color:var(--muted)}
+.f1{left:-28px;bottom:48px}
+.f2{right:-16px;top:36px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--mint);margin-right:8px}
+
+/* sections */
+section{padding:84px 0}
+.tint{background:var(--paper)}
+.sec-head{max-width:700px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:14px}
+.sec-head p{color:var(--muted)}
+
+/* sticky layout */
+.side{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+.side .lead{position:sticky;top:110px}
+.side .lead h2{font-size:clamp(2rem,3.4vw,2.7rem);margin-bottom:16px}
+.side .lead p{color:var(--muted)}
+.side .body p{margin-bottom:20px;color:var(--muted)}
+
+/* focus methods */
+.methods{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.mt{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;border-top:5px solid var(--peri)}
+.mt:nth-child(2){border-top-color:var(--mint)}
+.mt:nth-child(3){border-top-color:var(--ink)}
+.mt h3{font-size:1.4rem;margin-bottom:10px}
+.mt p{color:var(--muted);font-size:.99rem}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split.flip .pic{order:2}
+.pic{border-radius:var(--radius);overflow:hidden;background:#c9c5f0}
+.pic img{width:100%;height:100%;min-height:440px;object-fit:cover}
+.split h2{font-size:clamp(1.9rem,3.2vw,2.6rem);margin-bottom:18px}
+.split p{color:var(--muted);margin-bottom:18px}
+
+/* day blocks */
+.day{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:12px}
+.blk{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center;padding:14px 16px;border-radius:10px}
+.blk+.blk{margin-top:6px}
+.blk b{font-size:.92rem;color:var(--ink)}
+.blk span{font-size:.98rem;color:var(--ink);padding:11px 16px;border-radius:8px;display:block}
+.b1 span{background:var(--peri-l)}
+.b2 span{background:#D9F3EA}
+.b3 span{background:#E6E8F2}
+.b4 span{background:var(--peri-l)}
+.b5 span{background:#D9F3EA}
+
+/* note table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+table{width:100%;border-collapse:collapse;min-width:680px}
+th,td{text-align:left;padding:16px 20px;border-bottom:1px solid var(--line);font-size:.97rem;vertical-align:top}
+th{background:var(--ink);color:#fff;font-weight:700}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:700;color:var(--ink)}
+
+/* desk checklist */
+.desk{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.desk div{padding:20px 0 20px 40px;border-bottom:1px solid var(--line);position:relative}
+.desk div::before{content:"";position:absolute;left:4px;top:30px;width:14px;height:7px;border-left:3px solid var(--mint);border-bottom:3px solid var(--mint);transform:rotate(-45deg)}
+.desk h3{font-size:1.2rem;margin-bottom:4px}
+.desk p{color:var(--muted);font-size:.97rem}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px}
+.gal figure{margin:0}
+.gal .ph{border-radius:var(--radius);overflow:hidden;background:#c9c5f0}
+.gal img{width:100%;height:300px;object-fit:cover}
+.gal figcaption{font-size:.93rem;color:var(--muted);padding-top:10px}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-weight:700;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:20px;color:var(--ink)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--peri)}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:14px;color:var(--muted)}
+
+/* ad slots */
+.ad-slot{width:100%;max-width:1200px;margin:0 auto;padding:30px 28px;min-height:120px;text-align:center}
+
+/* disclaimer */
+.disclaimer{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--peri);border-radius:var(--radius);padding:32px 36px}
+.disclaimer h3{font-size:1.4rem;margin-bottom:12px}
+.disclaimer p{color:var(--muted);font-size:.97rem;margin-bottom:10px}
+
+/* footer */
+footer{background:var(--ink);color:#B4B8D0;padding:56px 0 32px}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:32px}
+footer .brand,footer .brand span{color:#fff}
+.foot p{max-width:420px;font-size:.95rem;margin-top:14px}
+.foot ul{list-style:none}
+.foot li{margin-bottom:10px}
+.foot a{color:#fff;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.copy{border-top:1px solid rgba(255,255,255,.16);padding-top:20px;font-size:.88rem}
+
+@media(max-width:960px){
+  nav{display:none}
+  .hero-grid,.split,.side{grid-template-columns:1fr;gap:36px}
+  .side .lead{position:static}
+  .split.flip .pic{order:0}
+  .hero-media img{height:340px}
+  .f1{left:12px;bottom:-20px}
+  .f2{right:12px;top:12px}
+  .methods,.gal,.desk{grid-template-columns:1fr}
+  .gal img{height:240px}
+  .pic img{min-height:300px}
+  .btn.out{margin:14px 0 0}
+  .blk{grid-template-columns:1fr;gap:6px}
+  section{padding:58px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Wearvanta home">
+      <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#5B52D6"/><path d="M8 13l6 15 6-11 6 11 6-15" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="9" r="2" fill="#38BF9A"/></svg>
+      <span>Wearvanta</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#methods">Focus methods</a></li>
+        <li><a href="#day">Daily planning</a></li>
+        <li><a href="#desk">Workspace</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Work with focus. Rest without guilt.</h1>
+      <p>Wearvanta is an independent reading space about focus and daily routines. We explain how to plan your day, set up a calm workspace, take clearer notes and build study habits that actually last.</p>
+      <a class="btn" href="#about">Start reading</a>
+      <a class="btn out" href="#methods">Explore methods</a>
+    </div>
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=80" alt="Tidy desk with laptop, notebook and coffee" loading="eager">
+      <div class="float f1"><strong><span class="dot"></span>One task at a time</strong><span>Single-tasking beats constant switching.</span></div>
+      <div class="float f2"><strong>Plan the night before</strong><span>Mornings start calmer.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section id="about">
+  <div class="wrap side">
+    <div class="lead">
+      <h2>Why Wearvanta exists</h2>
+      <p>Because feeling busy and getting meaningful work done are not the same thing.</p>
+    </div>
+    <div class="body">
+      <p>Many people spend their days jumping between messages, tabs and half-finished tasks, then wonder why they feel tired without having achieved much. The problem is rarely a lack of effort. More often it is a lack of structure around attention, which is easily scattered.</p>
+      <p>Wearvanta was created to explain simple, practical ways of protecting your focus. We look at one idea at a time, such as how to divide a day into blocks, why a tidy desk can make starting easier, or how to take notes you will actually understand a week later.</p>
+      <p>We do not promise instant transformation or sell any system. Our articles are written for students, professionals and anyone who wants a calmer rhythm. Take what is useful, leave what is not, and adjust everything to the way you really live.</p>
+    </div>
+  </div>
+</section>
+
+<div class="ad-slot">
+  <!-- Google ad unit 1: paste your ad code here -->
+  <!--
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<!-- METHODS -->
+<section id="methods" class="tint" style="padding-top:60px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Three simple ways to focus</h2>
+      <p>You do not need all of them. Try one for a week and notice how it feels.</p>
+    </div>
+    <div class="methods">
+      <div class="mt">
+        <h3>Short focus sessions</h3>
+        <p>Work on one task for a set period, commonly 25 to 50 minutes, then take a short break. The limited window makes starting easier and breaks keep your mind fresh.</p>
+      </div>
+      <div class="mt">
+        <h3>Time blocking</h3>
+        <p>Give different kinds of work their own slots in the day, such as deep work, messages and errands. Having a place for everything reduces the urge to check everything at once.</p>
+      </div>
+      <div class="mt">
+        <h3>The two-minute rule</h3>
+        <p>If a task will take less than two minutes, do it right away instead of listing it. This keeps tiny jobs from piling up into a heavy, distracting backlog.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE 1 -->
+<section>
+  <div class="wrap split">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=80" alt="Open notebook with a handwritten daily plan" loading="lazy"></div>
+    <div>
+      <h2>Begin with a clear daily intention</h2>
+      <p>The easiest way to lose a day is to start it without any idea of what matters. Spend a few minutes, either in the evening or first thing in the morning, writing down the two or three things that would make the day feel worthwhile. Keep the list short enough to be believable.</p>
+      <p>Choose one of those items as your main task and protect time for it before anything else. Early in the day, when energy and willpower are fresher for most people, is often a good moment, but your own rhythm matters more than any rule.</p>
+      <p>At the end of the day, take a minute to see what worked and what did not. This quiet review helps you plan more realistically over time, and it replaces vague guilt with useful information.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DAY BLOCKS -->
+<section id="day" class="tint">
+  <div class="wrap side">
+    <div class="lead">
+      <h2>A sample day in blocks</h2>
+      <p>A flexible example of how time blocking can look. Change the times and activities to suit your own routine, energy and responsibilities.</p>
+    </div>
+    <div class="day">
+      <div class="blk b1"><b>Morning</b><span>Main task: focused, uninterrupted work on the most important item</span></div>
+      <div class="blk b2"><b>Mid-morning</b><span>Short break: walk, stretch, drink water</span></div>
+      <div class="blk b3"><b>Midday</b><span>Messages, calls and quick tasks batched together</span></div>
+      <div class="blk b4"><b>Afternoon</b><span>Second focus block: reading, study or lighter creative work</span></div>
+      <div class="blk b5"><b>Evening</b><span>Wrap up, review the day, plan tomorrow, then switch off</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTES TABLE -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Ways of taking notes</h2>
+      <p>Good notes help you think, not just record. Here are some common approaches and what each is best suited to.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Method</th><th>How it works</th><th>Best for</th><th>Keep in mind</th></tr></thead>
+        <tbody>
+          <tr><td>Outline</td><td>Main points with indented sub-points</td><td>Lectures and structured topics</td><td>Can feel rigid for free-flowing ideas</td></tr>
+          <tr><td>Cornell style</td><td>Page split into notes, cues and a short summary</td><td>Study and revision</td><td>Takes a little setup time</td></tr>
+          <tr><td>Mind map</td><td>Central idea with branching topics</td><td>Brainstorming and connections</td><td>Can get crowded on small pages</td></tr>
+          <tr><td>Simple list</td><td>Short bullet points in your own words</td><td>Meetings and quick tasks</td><td>Review soon so details are not lost</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSPACE -->
+<section id="desk" class="tint">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>A workspace that helps you begin</h2>
+      <p>A calm, comfortable desk makes it easier to start and easier to keep going. These small details are worth a look.</p>
+    </div>
+    <div class="desk">
+      <div><h3>Clear the surface</h3><p>Keep only what you need for the current task within reach. A tidy surface reduces visual distraction.</p></div>
+      <div><h3>Good light</h3><p>Natural daylight is ideal. Add a soft desk lamp for evenings to reduce eye strain.</p></div>
+      <div><h3>Comfortable seating</h3><p>Sit with your feet supported and your screen near eye level so long sessions feel easier on your body.</p></div>
+      <div><h3>Quiet the phone</h3><p>Place your phone out of sight or switch off non-essential notifications while you work.</p></div>
+      <div><h3>Water within reach</h3><p>A glass of water on the desk is a simple reminder to take small, regular breaks.</p></div>
+      <div><h3>A single notebook</h3><p>Keep one notebook for quick thoughts so stray ideas do not pull you off task.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE 2 -->
+<section>
+  <div class="wrap split flip">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=900&q=80" alt="Shelves of books in a quiet library" loading="lazy"></div>
+    <div>
+      <h2>Study habits that stay with you</h2>
+      <p>Long, last-minute study sessions can feel productive but often fade quickly from memory. Spreading learning across several shorter sessions, with time in between, usually helps information stick far better than a single marathon.</p>
+      <p>Try testing yourself rather than only rereading. Closing the book and writing down what you remember, or explaining a topic aloud as if teaching it, shows you what you truly know and what needs attention. It can feel harder, but that effort is exactly what makes learning stronger.</p>
+      <p>Be kind to yourself along the way. Sleep, meals and movement all affect concentration, and rest is part of a good study routine, not a reward for finishing it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="tint">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Spaces for thinking</h2>
+      <p>Different places, same idea: fewer distractions and room to concentrate.</p>
+    </div>
+    <div class="gal">
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=900&q=80" alt="Minimal home desk setup by a window" loading="lazy"></div><figcaption>A simple desk by a window invites steady work.</figcaption></figure>
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=700&q=80" alt="Person writing in a notebook" loading="lazy"></div><figcaption>Writing by hand slows thinking down.</figcaption></figure>
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80" alt="Students studying together" loading="lazy"></div><figcaption>Studying with others can build accountability.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="ad-slot">
+  <!-- Google ad unit 2: paste your ad code here -->
+  <!--
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap narrow">
+    <div class="sec-head"><h2>Common questions</h2></div>
+    <details>
+      <summary>Is Wearvanta a course, app or coaching service?</summary>
+      <p>No. Wearvanta is an informational website. We do not sell courses, apps, planners, coaching or any other products or services. The pages are written only to share general ideas about focus and routines.</p>
+    </details>
+    <details>
+      <summary>I get distracted easily. Where should I start?</summary>
+      <p>Pick one small change, such as silencing notifications for 30 minutes while you work on a single task. Build from there once that feels natural.</p>
+    </details>
+    <details>
+      <summary>How long should a focus session be?</summary>
+      <p>It depends on you and the task. Many people try 25 to 50 minutes followed by a short break. Experiment, and keep whatever length lets you concentrate without strain.</p>
+    </details>
+    <details>
+      <summary>Do I need special tools to stay organised?</summary>
+      <p>Not at all. A notebook and pen or a basic notes app is enough. The habit matters far more than the tool, so choose whatever you will realistically keep using.</p>
+    </details>
+    <details>
+      <summary>What if my routine falls apart for a few days?</summary>
+      <p>That is completely normal. Simply restart with the smallest step, such as writing down tomorrow's main task. Routines are rebuilt more easily than they are perfected.</p>
+    </details>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section style="padding-top:0">
+  <div class="wrap narrow">
+    <div class="disclaimer" role="note">
+      <h3>Disclaimer</h3>
+      <p>The content on Wearvanta is provided for general informational and educational purposes only. It reflects common observations about productivity, study and daily routines and should not be treated as professional academic, career, medical, psychological or financial advice.</p>
+      <p>People work and learn in different ways, and results vary. If you are struggling with concentration, stress, sleep or wellbeing, please speak with a qualified professional. Images are used for illustration only and do not represent or endorse any specific product, brand or service.</p>
+      <p>Wearvanta does not sell products or services and makes no guarantees about results from applying the ideas shared here. Any decision you make is your own responsibility. Third-party advertising may appear on this site, and we are not responsible for the content of external advertisers.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" aria-label="Wearvanta home">
+          <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#fff"/><path d="M8 13l6 15 6-11 6 11 6-15" fill="none" stroke="#5B52D6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="9" r="2" fill="#38BF9A"/></svg>
+          <span>Wearvanta</span>
+        </a>
+        <p>An independent reading space about focus, study habits and calmer daily routines.</p>
+      </div>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="copy">&copy; 2026 Wearvanta. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
